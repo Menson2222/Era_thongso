@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ảnh tương tác</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Ngăn cuộn trang nếu ảnh lớn hơn cửa sổ */
+        }
+        #container {
+            position: relative;
+            width: 100vw; /* Chiều rộng 100% của viewport */
+            height: 110vh; /* Chiều cao 100% của viewport */
+            background-image: url('image0.jpg');
+            background-size: cover; /* Đảm bảo ảnh phủ toàn bộ phần tử */
+            background-position: center; /* Căn giữa ảnh nền */
+            background-repeat: no-repeat; /* Ngăn ảnh nền lặp lại */
+        }
+#buttons {
+    position: absolute;
+    bottom: 10%; /* Đặt phần tử chứa các nút ở dưới cùng */
+    left: 50%;
+    transform: translateX(-50%); /* Căn giữa theo chiều ngang */
+    display: flex;
+    justify-content: center; /* Căn giữa các nút theo chiều ngang */
+    width: 100%; /* Chiều rộng 100% của phần tử chứa */
+    padding: 10px; /* Khoảng cách từ đáy của phần tử chứa */
+}
+        .button {
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #1c51d7;
+            color: white;
+            border: black;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            font-size: 14px;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        #images {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; /* Chiều cao 100% của viewport */
+            width: 100vw; /* Chiều rộng 100% của viewport */
+            overflow: hidden; /* Ngăn cuộn nếu ảnh lớn hơn cửa sổ */
+        }
+        .image {
+            display: none;
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain; /* Giữ tỷ lệ ảnh và không cắt ảnh */
+        }
+        .back-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #f44336;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .back-button:hover {
+            background-color: #e53935;
+        }
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <div id="buttons">
+        <button class="button" onclick="showImage(1)">Độ điện dẫn - EC</button>
+        <button class="button" onclick="showImage(2)">Độ Ph - PH</button>
+        <button class="button" onclick="showImage(3)">Nồng độ chất rắn hòa tan - TDS</button>
+        <button class="button" onclick="showImage(4)">Nồng độ oxy - DO</button>
+        <button class="button" onclick="showImage(5)">Nhiệt độ - T°</button>
+        <button class="button" onclick="showImage(6)">Cảnh báo - ERORR</button>
+    </div>
+</div>
+
+<div id="images">
+    <img id="image1" class="image" src="image1.jpg" alt="Ảnh 1">
+    <img id="image2" class="image" src="image2.jpg" alt="Ảnh 2">
+    <img id="image3" class="image" src="image3.jpg" alt="Ảnh 3">
+    <img id="image4" class="image" src="image4.jpg" alt="Ảnh 4">
+    <img id="image5" class="image" src="image5.jpg" alt="Ảnh 5">
+    <img id="image6" class="image" src="image6.jpg" alt="Ảnh 6">
+    <button class="back-button" onclick="goBack()">Quay lại</button>
+</div>
+
+<script>
+    function showImage(imageNumber) {
+        document.getElementById('container').style.display = 'none';
+        document.getElementById('images').style.display = 'flex';
+        document.getElementById('image' + imageNumber).style.display = 'block';
+    }
+
+    function goBack() {
+        document.getElementById('images').style.display = 'none';
+        document.getElementById('container').style.display = 'flex';
+        let images = document.getElementsByClassName('image');
+        for (let i = 0; i < images.length; i++) {
+            images[i].style.display = 'none';
+        }
+    }
+</script>
+
+</body>
+</html>

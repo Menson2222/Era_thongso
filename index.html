@@ -8,26 +8,26 @@
         body {
             margin: 0;
             padding: 0;
-            overflow: hidden; /* Ngăn cuộn trang nếu ảnh lớn hơn cửa sổ */
+            overflow: hidden; 
         }
         #container {
             position: relative;
-            width: 100vw; /* Chiều rộng 100% của viewport */
-            height: 110vh; /* Chiều cao 100% của viewport */
+            width: 100vw; 
+            height: 110vh; 
             background-image: url('image0.jpg');
-            background-size: cover; /* Đảm bảo ảnh phủ toàn bộ phần tử */
-            background-position: center; /* Căn giữa ảnh nền */
-            background-repeat: no-repeat; /* Ngăn ảnh nền lặp lại */
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat;
         }
 #buttons {
     position: absolute;
-    bottom: 10%; /* Đặt phần tử chứa các nút ở dưới cùng */
+    bottom: 10%; 
     left: 50%;
-    transform: translateX(-50%); /* Căn giữa theo chiều ngang */
+    transform: translateX(-50%); 
     display: flex;
-    justify-content: center; /* Căn giữa các nút theo chiều ngang */
-    width: 100%; /* Chiều rộng 100% của phần tử chứa */
-    padding: 10px; /* Khoảng cách từ đáy của phần tử chứa */
+    justify-content: center; 
+    width: 100%; 
+    padding: 10px; 
 }
         .button {
             margin: 10px;
@@ -48,15 +48,15 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh; /* Chiều cao 100% của viewport */
-            width: 100vw; /* Chiều rộng 100% của viewport */
-            overflow: hidden; /* Ngăn cuộn nếu ảnh lớn hơn cửa sổ */
+            height: 100vh; 
+            width: 100vw;
+            overflow: hidden; 
         }
         .image {
             display: none;
             max-width: 100%;
             max-height: 100%;
-            object-fit: contain; /* Giữ tỷ lệ ảnh và không cắt ảnh */
+            object-fit: contain; 
         }
         .back-button {
             margin-top: 20px;
